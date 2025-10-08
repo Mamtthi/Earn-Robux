@@ -1,0 +1,11 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e40af;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* sorgt dafür, dass Footer nach unten rutscht */
+}
