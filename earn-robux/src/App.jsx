@@ -10,7 +10,6 @@ import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import TaskMathAddition from "./pages/TaskMathAddition";
 import {Outlet} from "react-router-dom";
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={ <Home/> } />
             <Route path="/about" element={ <About/> } />
-            <Route path="/task" element={ <Task/> } />
+            <Route path="/task/*" element={ <Task/> } />
             <Route path="/dashboard" element={ <Dashboard/> } /> 
             <Route path="/contact" element={ <Contact/> } />
           </Routes>

@@ -1,5 +1,19 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    flex-wrap: wrap;
+}
+.containerItem {
+    display: flex;
+    width: 50%;
+    flex-wrap: nowrap;
+}
+
 .text {
     font-style: italic;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }

@@ -9,7 +9,6 @@
 
 .main-content {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex: 1; /* wächst und schiebt Footer nach unten */
   width: 100%;
