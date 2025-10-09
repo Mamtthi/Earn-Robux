@@ -10,6 +10,8 @@ import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import TaskMathAddition from "./pages/TaskMathAddition";
+import {Outlet} from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0)

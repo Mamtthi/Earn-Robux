@@ -1,0 +1,36 @@
+.sectionChoice {
+  color: white;
+  padding: 0.75rem 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: auto;
+}
+
+.sectionChoiceList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+  background-color: #1e40af;
+  width: 100%;
+}
+
+.sectionChoiceItem {
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.sectionChoiceItem:hover {
+  color: #facc15;
+  background-color: #223b8e;
+}
+
+.sectionChoiceText {
+  font-size: 3rem;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+}
