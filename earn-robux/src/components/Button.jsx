@@ -30,7 +30,7 @@ export function StartButton ({userSelect}) {
             label="Startbutton"
             title="start"
             accessibilityLabel="starting task">
-        Start
+        Start der Aufgabe
         </button>
     );
     
