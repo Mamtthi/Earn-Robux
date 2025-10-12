@@ -1,0 +1,11 @@
+.additionTask {
+  display: grid;
+  justify-content: end;
+  text-align: right;
+  font-family: monospace;
+}
+.line {
+  border-bottom: 2px solid black;
+  height: 0.3em;
+}
+

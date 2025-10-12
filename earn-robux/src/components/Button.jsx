@@ -1,6 +1,5 @@
 import styles from "./Button.module.css";
 import { useNavigate } from 'react-router-dom';
-import userSelection from "../utils/userSelection";
 
 
 export function GoBackButton () {
@@ -22,7 +21,7 @@ export function GoBackButton () {
     );
 }
 
-export function StartButton ({userSelect}) {
+export function StartButton ({userSelect, userSelection}) {
     return (
         <button
             className={styles.button}
