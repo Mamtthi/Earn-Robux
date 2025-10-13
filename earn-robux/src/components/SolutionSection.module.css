@@ -1,0 +1,10 @@
+.solution {
+  color: green;
+  border: 1px solid green;
+  margin-top: 2rem;
+}
+.wrongSolutionText {
+  color: red;
+  border: 1px solid red;
+  margin-top: 2rem;
+}

@@ -21,17 +21,16 @@ export function GoBackButton () {
     );
 }
 
-export function StartButton ({userSelect, userSelection}) {
+export function StartButton ({onClick}) {
     return (
         <button
             className={styles.button}
-            onClick={() => userSelection(userSelect)}
+            onClick={onClick}
             label="Startbutton"
             title="start"
             aria-label="starting task">
         Start der Aufgabe
         </button>
     );
-    
 }
 
