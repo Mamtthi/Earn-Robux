@@ -1,5 +1,5 @@
-import styles from "../../styles/TaskMath.module.css";
-import {GoBackButton,StartButton} from "../../components/Button";
+import styles from "../Task.module.css";
+import {GoBackButton,StartButton} from "../../../components/Button";
 
 export default function TaskMathSubtraction () {
     return (

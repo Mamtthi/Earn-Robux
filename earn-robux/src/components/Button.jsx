@@ -14,7 +14,7 @@ export function GoBackButton () {
             onClick={goBack}
             label="Zurückbutton"
             title="back"
-            accessibilityLabel="go to previous site">
+            aria-label="go to previous site">
         Zurück
         </button>
 
@@ -28,7 +28,7 @@ export function StartButton ({userSelect, userSelection}) {
             onClick={() => userSelection(userSelect)}
             label="Startbutton"
             title="start"
-            accessibilityLabel="starting task">
+            aria-label="starting task">
         Start der Aufgabe
         </button>
     );

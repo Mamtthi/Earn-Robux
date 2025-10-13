@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Outlet } from "react-router-dom";
-import TaskChoice from "../components/TaskChoice";
-import TaskMathAddition from "./TaskMath/TaskMathAddition";
-import TaskMathSubtraction from "./TaskMath/TaskMathSubtraction";
-import TaskMathMultiplication from "./TaskMath/TaskMathMultiplication";
-import TaskMathDivision from "./TaskMath/TaskMathDivision";
+import TaskChoice from "../../components/TaskChoice";
+import TaskMathAddition from "./TaskMathAddition/TaskMathAddition";
+import TaskMathSubtraction from "./TaskMathSubtraction/TaskMathSubtraction";
+import TaskMathMultiplication from "./TaskMathMultiplication/TaskMathMultiplication";
+import TaskMathDivision from "./TaskMathDivision/TaskMathDivision";
 
 
 export default function Task () {

@@ -5,7 +5,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Task from "./pages/Task";
+import Task from "./pages/Task/Task";
 import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
