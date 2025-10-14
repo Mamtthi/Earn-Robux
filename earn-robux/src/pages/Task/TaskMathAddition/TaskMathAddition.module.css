@@ -7,21 +7,9 @@
   flex-wrap: wrap;
 }
 
-
-
-/* AdditonSection  */
-.additionTask {
-  font-size: 1.5rem;
-  display: grid;
-  justify-content: end;
-  text-align: right;
-  font-family: monospace;
-  width: 50%;
-  margin-top: 2rem;
-}
-.line {
-  border-bottom: 5px solid black;
-  height: 0.3em;
+.text {
+  margin-top: 5rem;
+  text-align: center;
 }
 
 

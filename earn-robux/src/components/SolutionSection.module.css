@@ -1,10 +1,13 @@
+.section {
+  margin-bottom: 2rem;
+}
 .solution {
   color: green;
   border: 1px solid green;
   margin-top: 2rem;
 }
 .wrongSolutionText {
-  color: red;
-  border: 1px solid red;
+  color: lightcoral;
+  border: 1px solid lightcoral;
   margin-top: 2rem;
 }

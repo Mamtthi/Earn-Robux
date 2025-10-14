@@ -1,6 +1,6 @@
 import styles from "./Input.module.css";
 
-export default function Input ({answer, setAnswer, handleComplete}) {
+export default function Input ({answer, setAnswer, handleComplete,disabled}) {
     return (
     <form 
         className={styles.form}
@@ -19,6 +19,7 @@ export default function Input ({answer, setAnswer, handleComplete}) {
         <button
             type="submit"
             className={styles.submit}
+            disabled={disabled}
         >Das ist meine Lösung</button>
     </form>
     );

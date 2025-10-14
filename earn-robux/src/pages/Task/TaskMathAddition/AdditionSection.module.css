@@ -1,0 +1,14 @@
+/* AdditonSection  */
+.additionTask {
+  font-size: 1.5rem;
+  display: grid;
+  justify-content: space-around;
+  text-align: right;
+  font-family: monospace;
+  width: 100%;
+  margin-top: 2rem;
+}
+.line {
+  border-bottom: 5px solid black;
+  height: 0.3em;
+}
