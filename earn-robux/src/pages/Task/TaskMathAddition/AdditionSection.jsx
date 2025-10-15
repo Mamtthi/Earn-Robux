@@ -2,9 +2,11 @@ import styles from "./AdditionSection.module.css";
 import Input from "../../../components/Input";
 import SolutionSection from "../../../components/SolutionSection";
 import GraduateSection from "../../../components/GraduateSection";
+import {ResetButton} from "../../../components/Button";
+import TaskBlockSection from "../../../components/TaskBlockSection";
 import {useState} from "react";
 import {getSum,compareSolution} from "../../../utils/helperFunctions";
-import {ResetButton} from "../../../components/Button";
+
 
 export default function AdditionSection ({num1,num2,onReset}) {
     const [answer,setAnswer] = useState("");
@@ -34,11 +36,8 @@ export default function AdditionSection ({num1,num2,onReset}) {
     }
 
     return (
-        <section className={styles.additionTask}>
-            <p className="" id="first-summand">{num1}</p>
-            <p className="" id="second-summand">+{num2}</p>
-            <p className="" id="estimation">Überschläge</p>
-            <p className={styles.line}></p>
+        <section className={styles.mainSection}>
+            <TaskBlockSection num1={num1} num2={num2} operation={"addition"} />
             { showSolution == false && graduate==false &&(
                 <Input answer={answer} setAnswer={setAnswer} handleComplete={handleComplete} disabled={disabled}/>
             )}    

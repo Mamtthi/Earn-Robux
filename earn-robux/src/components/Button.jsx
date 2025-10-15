@@ -15,7 +15,7 @@ export function GoBackButton () {
             label="Zurückbutton"
             title="back"
             aria-label="go to previous site">
-        Zurück &#129339;
+        Zurück &#127939;
         </button>
 
     );

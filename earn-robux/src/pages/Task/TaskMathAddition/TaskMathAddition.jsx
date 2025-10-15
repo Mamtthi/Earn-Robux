@@ -32,9 +32,11 @@ export default function TaskMathAddition () {
             {showAdditionSection == false && (
                 <h1 className={styles.text}>Hier erscheint deine Additionsaufgabe, sobald du auf "Start der Aufgabe" klickst.</h1>
             )}
-            {showAdditionSection && (<section aria-label="main" className={styles.sectionMain}>
-                <AdditionSection num1={num1} num2={num2} onReset={handleReset}/>
-            </section>)}
+            {showAdditionSection && (
+                <section aria-label="main" className={styles.sectionMain}>
+                    <AdditionSection num1={num1} num2={num2} onReset={handleReset}/>
+                </section>
+            )}
             
         </>
     );
