@@ -13,6 +13,8 @@ export default function TaskMathSubtraction () {
 
     const handleClickOnStartButton = () =>{
         userSelection("subtraction",setNum1,setNum2);
+        setShowSubtraction(true);
+        setDisabled(true);
     }
 
     const handleReset = () =>{

@@ -16,12 +16,12 @@ export default function Multiplication({num1,num2,onReset}) {
     const [timeLeft, setTimeLeft] = useState(5);
 
     useEffect(() => { 
-        if (!showSolution && timeLeft > 0) {
+        if (!showSolution && timeLeft > 0 && !graduate) {
             const interval = setInterval(() => {
                 setTimeLeft(prev => prev - 1);
             }, 1000);
             return () => clearInterval(interval);
-        } else if (timeLeft === 0) {
+        } else if (timeLeft === 0 && !graduate) {
             setShowSolution(true);
             setDisabled(true);
         }
