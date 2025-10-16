@@ -25,8 +25,14 @@ export default function userSelection(operation,setNum1,setNum2){
             break;
         }
         case "multiplication": {
-            setNum1(generateNumber());
-            setNum2(generateNumber());          
+            let num1=generateNumber(10);
+            let num2=generateNumber(10);
+            while ( num1<0 || num2<0 ) {
+                num1=generateNumber(10);
+                num2=generateNumber(10);
+            }
+            setNum1(num1);
+            setNum2(num2);          
             break;
         }
         case "division": {

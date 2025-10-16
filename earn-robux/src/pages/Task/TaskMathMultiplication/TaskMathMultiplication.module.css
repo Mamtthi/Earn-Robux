@@ -1,5 +1,13 @@
+/* TaskMathAddition */
+
+.sectionMain {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .text {
-    font-style: italic;
-    justify-content: center;
-    align-items: center;
+  margin-top: 5rem;
+  text-align: center;
 }
