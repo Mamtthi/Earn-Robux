@@ -1,3 +1,10 @@
+.mainSection {
+  display: flex;
+  justify-content: center;
+}
+.mainSection p {
+  margin: 1rem;
+}
 .line {
   border-bottom: 5px solid black;
   height: 0.3em;

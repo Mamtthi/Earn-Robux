@@ -1,19 +1,19 @@
-import styles from "./MultiplicationSection.module.css";
+import styles from "./DivisionSection.module.css";
 import Input from "../../../components/Input";
 import SolutionSection from "../../../components/SolutionSection";
 import GraduateSection from "../../../components/GraduateSection";
 import TaskBlockSection from "../../../components/TaskBlockSection";
 import {ResetButton} from "../../../components/Button";
 import {useState,useEffect} from "react";
-import {getProduct,compareSolution} from "../../../utils/helperFunctions";
+import {getQuotient,compareSolution} from "../../../utils/helperFunctions";
 
-export default function MultiplicationSection({num1,num2,onReset}) {
+export default function DivisionSection({num1,num2,onReset}) {
     const [answer,setAnswer] = useState("");
     const [showSolution,setShowSolution] = useState(false);
     const [graduate,setGraduate] = useState(false);
     const [disabled,setDisabled] = useState(false);
-    const solution = getProduct(num1,num2);
-    const [timeLeft, setTimeLeft] = useState(5);
+    const solution = getQuotient(num1,num2);
+    const [timeLeft, setTimeLeft] = useState(30);
 
     useEffect(() => { 
         if (!showSolution && timeLeft > 0 && !graduate) {
@@ -47,12 +47,12 @@ export default function MultiplicationSection({num1,num2,onReset}) {
         setGraduate(false);
         setAnswer("");
         onReset();
-        setTimeLeft(5);
+        setTimeLeft(30);
     }
 
     return (
         <section className={styles.mainSection}>
-            <TaskBlockSection num1={num1} num2={num2} operation={"multiplication"} />
+            <TaskBlockSection num1={num1} num2={num2} operation={"division"} />
             { showSolution == false && graduate==false &&(
                 <Input answer={answer} setAnswer={setAnswer} handleComplete={handleComplete} disabled={disabled}/>
             )}

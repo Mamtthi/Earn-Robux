@@ -36,8 +36,16 @@ export default function userSelection(operation,setNum1,setNum2){
             break;
         }
         case "division": {
-            setNum1(generateNumber());
-            setNum2(generateNumber());          
+            let num1=generateNumber(10);
+            let num2=generateNumber(10);
+            let num3=num1*num2;
+            while (num3>100 || num3%num2!=0 || num2==0){
+                num1=generateNumber(10);
+                num2=generateNumber(10);
+                num3=num1*num2;
+            }
+            setNum1(num3);
+            setNum2(num2);          
             break;
         }
         default: console.log("Fehler in der Rechnenoperation!");break;
