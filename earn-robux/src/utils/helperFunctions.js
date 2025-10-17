@@ -28,3 +28,5 @@ export function getProduct (num1,num2) {
 export function getQuotient (num1,num2) {
     return num1/num2;
 }
+
+export const counterArray =[];
