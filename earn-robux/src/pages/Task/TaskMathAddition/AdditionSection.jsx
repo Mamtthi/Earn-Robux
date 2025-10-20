@@ -4,17 +4,27 @@ import SolutionSection from "../../../components/SolutionSection";
 import GraduateSection from "../../../components/GraduateSection";
 import {ResetButton} from "../../../components/Button";
 import TaskBlockSection from "../../../components/TaskBlockSection";
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import {getSum,compareSolution} from "../../../utils/helperFunctions";
 
 
-export default function AdditionSection ({num1,num2,onReset}) {
+export default function AdditionSection ({num1,num2,onReset,addPoints}) {
     const [answer,setAnswer] = useState("");
     const [showSolution,setShowSolution] = useState(false);
     const [graduate,setGraduate] = useState(false);
     const [disabled,setDisabled] = useState(false);
     const solution = getSum(num1,num2);
-
+/*
+    useEffect(() => {
+        if (graduate) {
+        fetch("punkte.php", {
+            method: "POST",
+            body: new URLSearchParams({ delta: 1 }), // z. B. 5 Punkte pro Aufgabe
+        });
+        addPoints(1);
+        }
+    }, [graduate]);
+*/
     const handleComplete = (value) => {
         setDisabled(true);
         if (compareSolution(value,solution)==false){
@@ -24,6 +34,11 @@ export default function AdditionSection ({num1,num2,onReset}) {
         else {
             // Bei richtig: Anzeige und Update der Punkte
             setGraduate(true);
+            addPoints(1);
+            fetch("../../../../public/punkte.json", { // optional
+            method: "POST",
+            body: new URLSearchParams({ delta: 1 }),
+        });
         }     
     }
     

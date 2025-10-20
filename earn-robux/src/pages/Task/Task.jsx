@@ -7,15 +7,15 @@ import TaskMathMultiplication from "./TaskMathMultiplication/TaskMathMultiplicat
 import TaskMathDivision from "./TaskMathDivision/TaskMathDivision";
 
 
-export default function Task () {
+export default function Task ({addPoints}) {
     return (
         <>
             <Routes>
                 <Route index element={ <TaskChoice/> } />
-                <Route path="taskmathaddition" element={ <TaskMathAddition/> } />
-                <Route path="taskmathsubtraction" element={ <TaskMathSubtraction/> } />
-                <Route path="taskmathmultiplication" element={ <TaskMathMultiplication/> } />
-                <Route path="taskmathdivision" element={ <TaskMathDivision/> } />
+                <Route path="taskmathaddition" element={ <TaskMathAddition addPoints={addPoints}/> } />
+                <Route path="taskmathsubtraction" element={ <TaskMathSubtraction addPoints={addPoints}/> } />
+                <Route path="taskmathmultiplication" element={ <TaskMathMultiplication addPoints={addPoints}/> } />
+                <Route path="taskmathdivision" element={ <TaskMathDivision addPoints={addPoints}/> } />
             </Routes>
             <Outlet />
         </>
