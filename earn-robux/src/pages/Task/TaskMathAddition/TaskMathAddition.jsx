@@ -6,7 +6,7 @@ import AdditionSection from "./AdditionSection";
 import {useState} from "react";
 
 
-export default function TaskMathAddition ({addPoints}) {
+export default function TaskMathAddition ({sessionPoints, addPoints}) {
     const [num1,setNum1] = useState(0);
     const [num2,setNum2] = useState(0);
     const [showAdditionSection,setShowAdditionSection] = useState(false);
