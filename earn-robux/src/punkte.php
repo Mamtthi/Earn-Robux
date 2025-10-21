@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *"); // für alle Domains
 header("Content-Type: application/json");
 
 // --- Datenbankverbindung ---

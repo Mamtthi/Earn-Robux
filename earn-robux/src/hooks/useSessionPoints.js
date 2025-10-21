@@ -5,7 +5,7 @@ export default function useSessionPoints( initialValue = 0 ){
     const [sessionPoints,setSessionPoints] = useState(initialValue);
     const [totalPoints, setTotalPoints] = useState(0);
 
-    const PHP_URL = "https://amonslernseite.loveslife.biz/punkte.php";
+    const PHP_URL = "https://kassenvergleich.great-site.net/punkte.php";
 
         useEffect(() => {
             const fetchPoints = async () => {
