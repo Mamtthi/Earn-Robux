@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       .from('Points')
       .select('points')
       .eq('id', 1)
-      .single();
+      .maybeSingle();
 
     console.log("DATA:", data, "ERROR:", error);
 
