@@ -5,12 +5,10 @@ export default function useSessionPoints( initialValue = 0 ){
     const [sessionPoints,setSessionPoints] = useState(initialValue);
     const [totalPoints, setTotalPoints] = useState(0);
 
-    const PHP_URL = "https://kassenvergleich.great-site.net/punkte.php";
-
         useEffect(() => {
             const fetchPoints = async () => {
                 try {
-                    const res = await fetch(PHP_URL);
+                    const res = await fetch("/.netlify/functions/value");
                     const data = await res.json();
                     setTotalPoints(data.punkte ?? 0);
                 } catch (err) {
@@ -24,10 +22,10 @@ export default function useSessionPoints( initialValue = 0 ){
     const addPoints = async (number = 1) => {
         setSessionPoints(prev => prev + number);
         try {
-            await fetch(PHP_URL, {
+            await fetch("/.netlify/functions/value", {
                 method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams({ delta: number }),
+                headers: { "Content-Type": "application/json" },
+                body: new URLSearchParams({ points: totalPoints }),
             });
             setTotalPoints(prev => prev + number); // optional, synchron mit Session
         } catch (err) {
@@ -39,10 +37,10 @@ export default function useSessionPoints( initialValue = 0 ){
         setSessionPoints(0);
 
         try {
-            await fetch(PHP_URL, {
+            await fetch("/.netlify/functions/value", {
                 method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams({ delta: -totalPoints }), // setzt Gesamtpunkte auf 0
+                headers: { "Content-Type": "application/json" },
+                body: new URLSearchParams({ points: -totalPoints }), // setzt Gesamtpunkte auf 0
             });
             setTotalPoints(0);
         } catch (err) {
