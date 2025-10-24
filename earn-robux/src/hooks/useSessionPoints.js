@@ -8,7 +8,7 @@ export default function useSessionPoints( initialValue = 0 ){
         useEffect(() => {
             const fetchPoints = async () => {
                 try {
-                    const res = await fetch("/.netlify/functions/value");
+                    const res = await fetch("/api/value");
                     const data = await res.json();
                     setTotalPoints(data.punkte ?? 0);
                 } catch (err) {
@@ -22,7 +22,7 @@ export default function useSessionPoints( initialValue = 0 ){
     const addPoints = async (number = 1) => {
         setSessionPoints(prev => prev + number);
         try {
-            await fetch("/.netlify/functions/value", {
+            await fetch("/api/value", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: new URLSearchParams({ points: totalPoints }),
@@ -37,7 +37,7 @@ export default function useSessionPoints( initialValue = 0 ){
         setSessionPoints(0);
 
         try {
-            await fetch("/.netlify/functions/value", {
+            await fetch("/api/value", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: new URLSearchParams({ points: -totalPoints }), // setzt Gesamtpunkte auf 0
