@@ -25,7 +25,7 @@ export default function useSessionPoints( initialValue = 0 ){
             await fetch("/api/value", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: new URLSearchParams({ points: totalPoints }),
+                body: JSON.stringify({ points: totalPoints }),
             });
             setTotalPoints(prev => prev + number); // optional, synchron mit Session
         } catch (err) {
@@ -40,7 +40,7 @@ export default function useSessionPoints( initialValue = 0 ){
             await fetch("/api/value", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: new URLSearchParams({ points: 0 }), // setzt Gesamtpunkte auf 0
+                body: JSON.stringify({ points: 0 }), // setzt Gesamtpunkte auf 0
             });
             setTotalPoints(0);
         } catch (err) {
