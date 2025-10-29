@@ -8,14 +8,15 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import useSessionPoints from "./hooks/useSessionPoints";
+import {useState} from "react";
 
 
 function App() {
 
   const [sessionPoints, setSessionPoints] = useState(0);
 
-  const { totalPoints, addPoints, resetPoints } = useSessionPoints(sessionPoints, setSessionPoints);
-  
+  const { totalPoints, addPoints, /*resetPoints*/ } = useSessionPoints(sessionPoints, setSessionPoints);
+
   return (
     <BrowserRouter>
       <div className="app-container">
