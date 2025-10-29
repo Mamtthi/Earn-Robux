@@ -1,8 +1,7 @@
 import {useState,useEffect} from "react";
 
-export default function useSessionPoints( initialValue = 0 ){
+export default function useSessionPoints( sessionPoints, setSessionPoints ){
 
-    const [sessionPoints,setSessionPoints] = useState(initialValue);
     const [totalPoints, setTotalPoints] = useState(0);
 
         useEffect(() => {
@@ -20,12 +19,18 @@ export default function useSessionPoints( initialValue = 0 ){
 
         // --- Punkte hinzufügen & in DB speichern ---
     const addPoints = async (number = 1) => {
-        setSessionPoints(prev => prev + number);
+        
+        const newSession = sessionPoints + number;
+        const newTotal = totalPoints + number;
+
+        setSessionPoints(newSession);
+        setTotalPoints(newTotal);
+
         try {
             await fetch("/api/value", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ points: totalPoints }),
+                body: JSON.stringify({ points: newTotal }),
             });
             setTotalPoints(prev => prev + number); // optional, synchron mit Session
         } catch (err) {
@@ -35,6 +40,7 @@ export default function useSessionPoints( initialValue = 0 ){
 
     const resetPoints = async () => {
         setSessionPoints(0);
+        setTotalPoints(0);
 
         try {
             await fetch("/api/value", {

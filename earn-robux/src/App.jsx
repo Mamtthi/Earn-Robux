@@ -11,7 +11,11 @@ import useSessionPoints from "./hooks/useSessionPoints";
 
 
 function App() {
-  const { sessionPoints, totalPoints, addPoints } = useSessionPoints();
+
+  const [sessionPoints, setSessionPoints] = useState(0);
+
+  const { totalPoints, addPoints, resetPoints } = useSessionPoints(sessionPoints, setSessionPoints);
+  
   return (
     <BrowserRouter>
       <div className="app-container">
@@ -20,7 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={ <Home/> } />
             <Route path="/about" element={ <About/> } />
-            <Route path="/task/*" element={ <Task addPoints={addPoints}/> } />
+            <Route path="/task/*" element={ <Task addPoints={addPoints} sessionPoints={sessionPoints}/> } />
             <Route path="/dashboard" element={ <Dashboard sessionPoints={sessionPoints} totalPoints={totalPoints} /> } /> 
             <Route path="/contact" element={ <Contact/> } />
           </Routes>
@@ -31,4 +35,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

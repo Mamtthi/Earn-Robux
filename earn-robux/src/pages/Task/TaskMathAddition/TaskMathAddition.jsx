@@ -6,7 +6,7 @@ import AdditionSection from "./AdditionSection";
 import {useState} from "react";
 
 
-export default function TaskMathAddition ({sessionPoints, addPoints}) {
+export default function TaskMathAddition ({ addPoints, sessionPoints }) {
     const [num1,setNum1] = useState(0);
     const [num2,setNum2] = useState(0);
     const [showAdditionSection,setShowAdditionSection] = useState(false);
@@ -34,7 +34,7 @@ export default function TaskMathAddition ({sessionPoints, addPoints}) {
             )}
             {showAdditionSection && (
                 <section aria-label="main" className={styles.sectionMain}>
-                    <AdditionSection num1={num1} num2={num2} onReset={handleReset} addPoints={addPoints} />
+                    <AdditionSection num1={num1} num2={num2} onReset={handleReset} addPoints={addPoints} sessionPoints={sessionPoints}/>
                 </section>
             )}
             

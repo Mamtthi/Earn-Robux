@@ -8,7 +8,7 @@ import {useState,useEffect} from "react";
 import {getSum,compareSolution} from "../../../utils/helperFunctions";
 
 
-export default function AdditionSection ({num1, num2, onReset, addPoints}) {
+export default function AdditionSection ({num1, num2, onReset, addPoints, sessionPoints}) {  //sessionPoints werden demnächst live angezeigt
     const [answer,setAnswer] = useState("");
     const [showSolution,setShowSolution] = useState(false);
     const [graduate,setGraduate] = useState(false);
