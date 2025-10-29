@@ -7,7 +7,7 @@ import {ResetButton} from "../../../components/Button";
 import {useState,useEffect} from "react";
 import {getProduct,compareSolution} from "../../../utils/helperFunctions";
 
-export default function MultiplicationSection({num1,num2,onReset}) {
+export default function MultiplicationSection({num1,num2,onReset,addPoints,sessionPoints}) {
     const [answer,setAnswer] = useState("");
     const [showSolution,setShowSolution] = useState(false);
     const [graduate,setGraduate] = useState(false);
@@ -38,6 +38,7 @@ export default function MultiplicationSection({num1,num2,onReset}) {
         else {
             // Bei richtig: Anzeige und Update der Punkte
             setGraduate(true);
+            addPoints(1);
         }     
     }
     

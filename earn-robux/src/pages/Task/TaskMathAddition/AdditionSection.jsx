@@ -24,7 +24,7 @@ export default function AdditionSection ({num1, num2, onReset, addPoints, sessio
         else {
             // Bei richtig: Anzeige und Update der Punkte
             setGraduate(true);
-            addPoints(1);
+            addPoints(2);
         }     
     }
     

@@ -5,7 +5,7 @@ import SubtractionSection from "./SubtractionSection";
 import userSelection from "../../../utils/userSelection";
 import {useState} from "react";
 
-export default function TaskMathSubtraction () {
+export default function TaskMathSubtraction ({addPoints,sessionPoints}) {
     const [showSubtraction,setShowSubtraction] = useState(false);
     const [disabled,setDisabled] = useState(false);
     const [num1,setNum1] = useState(0);
@@ -33,7 +33,7 @@ export default function TaskMathSubtraction () {
             )}
             {showSubtraction && (
                 <section aria-label="main" className={styles.sectionMain}>
-                    <SubtractionSection num1={num1} num2={num2} onReset={handleReset} />
+                    <SubtractionSection num1={num1} num2={num2} onReset={handleReset} addPoints={addPoints} sessionPoints={sessionPoints}/>
                 </section>
             )}
         </>

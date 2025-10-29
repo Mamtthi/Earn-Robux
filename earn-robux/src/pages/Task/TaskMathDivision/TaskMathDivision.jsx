@@ -5,7 +5,7 @@ import DivisionSection from "./DivisionSection";
 import userSelection from "../../../utils/userSelection";
 import {useState} from "react";
 
-export default function TaskMathDivision () {
+export default function TaskMathDivision ({addPoints,sessionPoints}) {
     const [showDivision,setShowDivision] = useState(false);
     const [disabled,setDisabled] = useState(false);
     const [num1,setNum1] = useState(0);
@@ -33,7 +33,7 @@ export default function TaskMathDivision () {
             )}
             {showDivision && (
                 <section aria-label="main" className={styles.sectionMain}>
-                    <DivisionSection num1={num1} num2={num2} onReset={handleReset} />
+                    <DivisionSection num1={num1} num2={num2} onReset={handleReset} addPoints={addPoints} sessionPoints={sessionPoints} />
                 </section>
             )}
         </>

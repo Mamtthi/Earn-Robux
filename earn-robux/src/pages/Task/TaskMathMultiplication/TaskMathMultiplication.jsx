@@ -5,7 +5,7 @@ import MultiplicationSection from "./MultiplicationSection";
 import userSelection from "../../../utils/userSelection";
 import {useState} from "react";
 
-export default function TaskMathMultiplication () {
+export default function TaskMathMultiplication ({addPoints,sessionPoints}) {
     const [showMultiplication,setShowMultiplication] = useState(false);
     const [disabled,setDisabled] = useState(false);
     const [num1,setNum1] = useState(0);
@@ -33,7 +33,7 @@ export default function TaskMathMultiplication () {
             )}
             {showMultiplication && (
                 <section aria-label="main" className={styles.sectionMain}>
-                    <MultiplicationSection num1={num1} num2={num2} onReset={handleReset} />
+                    <MultiplicationSection num1={num1} num2={num2} onReset={handleReset} addPoints={addPoints} sessionPoints={sessionPoints}/>
                 </section>
             )}
         </>

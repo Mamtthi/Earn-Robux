@@ -8,7 +8,7 @@ import Input from "../../../components/Input"
 import {compareSolution,getDifference} from "../../../utils/helperFunctions";
 
 
-export default function SubtractionSection ({num1,num2,onReset}) {
+export default function SubtractionSection ({num1,num2,onReset,addPoints,sessionPoints}) {
     const [showSolution,setShowSolution] = useState(false);
     const [graduate,setGraduate] = useState(false);
     const [disabled,setDisabled] = useState(false);
@@ -25,6 +25,7 @@ export default function SubtractionSection ({num1,num2,onReset}) {
         else {
             // Bei richtig: Anzeige und Update der Punkte
             setGraduate(true);
+            addPoints(3);
         } 
     }
 
