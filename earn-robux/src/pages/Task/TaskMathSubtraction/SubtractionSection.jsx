@@ -40,7 +40,7 @@ export default function SubtractionSection ({num1,num2,onReset,addPoints,session
     return (
         <section className={styles.mainSection}>
             <TaskBlockSection num1={num1} num2={num2} operation={"subtraction"}/>
-            {showSolution == false && (
+            {showSolution == false && graduate==false && (
                 <Input answer={answer} setAnswer={setAnswer} handleComplete={handleComplete} disabled={disabled} />
             )}
             {showSolution == true && (
