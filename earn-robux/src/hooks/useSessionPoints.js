@@ -32,7 +32,6 @@ export default function useSessionPoints( sessionPoints, setSessionPoints ){
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ points: newTotal }),
             });
-            setTotalPoints(prev => prev + number); // optional, synchron mit Session
         } catch (err) {
             console.error(err);
         }
