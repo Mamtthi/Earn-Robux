@@ -15,7 +15,7 @@ function App() {
 
   const [sessionPoints, setSessionPoints] = useState(0);
 
-  const { totalPoints, addPoints, /*resetPoints*/ } = useSessionPoints(sessionPoints, setSessionPoints);
+  const { totalPoints, addPoints, resetPoints } = useSessionPoints(sessionPoints, setSessionPoints);
 
   return (
     <BrowserRouter>

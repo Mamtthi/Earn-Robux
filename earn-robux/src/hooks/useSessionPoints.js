@@ -54,5 +54,5 @@ export default function useSessionPoints( sessionPoints, setSessionPoints ){
         }
     };
 
-    return {sessionPoints, totalPoints, addPoints, resetPoints};
+    return {totalPoints, addPoints, resetPoints};
 }
