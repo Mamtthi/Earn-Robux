@@ -5,6 +5,7 @@ import { useState,useEffect } from "react";
 export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
     const [minPointsReached,setMinPointsReached] = useState(false);
     const [errmsg,setErrMsg] = useState("");
+
     useEffect(() => { 
             if (totalPoints >= 600) {
                 setMinPointsReached(true);
@@ -12,8 +13,8 @@ export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
             }
         }, [totalPoints]);
 
-    const handleBuyRobux = (totalPoints) => {    
-        if (totalPoints >= 600) {
+    const handleBuyRobux = () => {    
+        if (minPointsReached == true) {
             const newTotalPoints = totalPoints-600;
             reducePoints(newTotalPoints);
         }
