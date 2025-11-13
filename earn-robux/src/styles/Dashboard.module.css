@@ -1,0 +1,18 @@
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+.errmsg {
+    color: red;
+    font-size: 1.5rem;
+}
+
+h2,p {
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem;
+}
+

@@ -37,21 +37,19 @@ export default function useSessionPoints( sessionPoints, setSessionPoints ){
         }
     };
 
-    const resetPoints = async () => {
-        setSessionPoints(0);
-        setTotalPoints(0);
+    const reducePoints = async (newTotalPoints) => {
 
         try {
             await fetch("/api/value", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ points: 0 }), // setzt Gesamtpunkte auf 0
+                body: JSON.stringify({ points: newTotalPoints }), // setzt Gesamtpunkte newTotalPoints in DB
             });
-            setTotalPoints(0);
+            setTotalPoints(newTotalPoints);
         } catch (err) {
-            console.error("Fehler beim Zurücksetzen der Punkte:", err);
+            console.error("Fehler beim Punkte reduzieren:", err);
         }
     };
 
-    return {totalPoints, addPoints, resetPoints};
+    return {totalPoints, addPoints, reducePoints};
 }

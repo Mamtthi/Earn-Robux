@@ -1,0 +1,15 @@
+.section {
+    display: flex;
+    justify-content: space-around;
+}
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin: 2rem auto;
+}
+p {
+    width: 60%;
+    font-size: large;
+    margin: 0.5rem auto;
+    color:aliceblue;
+}

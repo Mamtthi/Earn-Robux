@@ -48,3 +48,16 @@ export function ResetButton ({onClick}) {
     )
 }
 
+export function BuyRobuxButton ({onClick}) {
+    return (
+        <button
+            className={styles.button}
+            onClick={onClick}
+            label="BuyRobux"
+            titel="BuyRobux"
+            aria-label="reduce Points">
+            Kaufe Robux
+        </button>
+    )
+}
+

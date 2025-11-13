@@ -15,7 +15,7 @@ function App() {
 
   const [sessionPoints, setSessionPoints] = useState(0);
 
-  const { totalPoints, addPoints, resetPoints } = useSessionPoints(sessionPoints, setSessionPoints);
+  const { totalPoints, addPoints, reducePoints } = useSessionPoints(sessionPoints, setSessionPoints);
 
   return (
     <BrowserRouter>
@@ -26,7 +26,7 @@ function App() {
             <Route path="/" element={ <Home/> } />
             <Route path="/about" element={ <About/> } />
             <Route path="/task/*" element={ <Task addPoints={addPoints} sessionPoints={sessionPoints}/> } />
-            <Route path="/dashboard" element={ <Dashboard sessionPoints={sessionPoints} totalPoints={totalPoints} /> } /> 
+            <Route path="/dashboard" element={ <Dashboard sessionPoints={sessionPoints} totalPoints={totalPoints} reducePoints={reducePoints}/> } /> 
             <Route path="/contact" element={ <Contact/> } />
           </Routes>
         </main>
