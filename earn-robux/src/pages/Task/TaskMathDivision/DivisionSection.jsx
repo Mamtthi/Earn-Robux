@@ -38,7 +38,7 @@ export default function DivisionSection({num1,num2,onReset,addPoints,sessionPoin
         else {
             // Bei richtig: Anzeige und Update der Punkte
             setGraduate(true);
-            addPoints(3)
+            addPoints(2)
         }     
     }
     

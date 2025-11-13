@@ -1,10 +1,18 @@
 import { BuyRobuxButton } from "../components/Button";
 import styles from "../styles/Dashboard.module.css";
+import { useState,useEffect } from "react";
 
 export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
+    const [minPointsReached,setMinPointsReached] = useState(false);
     let errmsg = "";
+    useEffect(() => { 
+            if (totalPoints >= 600) {
+                setMinPointsReached(true);
+            }
+        }, [totalPoints]);
+
     const handleBuyRobux = (totalPoints) => {    
-        if (totalPoints > 600) {
+        if (totalPoints >= 600) {
             const newTotalPoints = totalPoints-600;
             reducePoints(newTotalPoints);
         }
@@ -19,7 +27,7 @@ export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
             <p>{totalPoints}</p>
             <h2>Deine heute erreichten Punkte:</h2>
             <p>{sessionPoints}</p>
-            <BuyRobuxButton onClick={handleBuyRobux} />
+            <BuyRobuxButton onClick={handleBuyRobux} minPointsReached={minPointsReached}/>
             <p className={styles.errmsg}>{errmsg}</p>
         </section>
     );

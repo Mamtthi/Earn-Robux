@@ -48,10 +48,10 @@ export function ResetButton ({onClick}) {
     )
 }
 
-export function BuyRobuxButton ({onClick}) {
+export function BuyRobuxButton ({onClick,minPointsReached}) {
     return (
         <button
-            className={styles.button}
+            className={ minPointsReached == true ? styles.button : styles.buttonDeactived }
             onClick={onClick}
             label="BuyRobux"
             titel="BuyRobux"

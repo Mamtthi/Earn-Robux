@@ -1,8 +1,16 @@
 .button {
     background-color: bisque;
-    color:black;
+    color:green;
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+.buttonDeactived {
+    background-color: rgb(216, 195, 182);
+    color:red;
+    border-radius: 20px;
+    font-size: 2rem;
     padding: 0.5rem;
 }
 
