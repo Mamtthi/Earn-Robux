@@ -4,10 +4,11 @@ import { useState,useEffect } from "react";
 
 export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
     const [minPointsReached,setMinPointsReached] = useState(false);
-    let errmsg = "";
+    const [errmsg,setErrMsg] = useState("");
     useEffect(() => { 
             if (totalPoints >= 600) {
                 setMinPointsReached(true);
+                setErrMsg("");
             }
         }, [totalPoints]);
 
@@ -17,7 +18,7 @@ export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
             reducePoints(newTotalPoints);
         }
         else {
-            errmsg = "Es sind noch nicht genug Punkte vorhanden."
+            setErrMsg("Es sind noch nicht genug Punkte vorhanden.");
         }
     }
 
