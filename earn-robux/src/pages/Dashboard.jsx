@@ -7,7 +7,7 @@ export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
     const [errmsg,setErrMsg] = useState("");
 
     useEffect(() => { 
-            if (totalPoints >= 600) {
+            if (totalPoints >= 500) {
                 setMinPointsReached(true);
                 setErrMsg("");
             }
