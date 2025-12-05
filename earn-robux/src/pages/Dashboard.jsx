@@ -15,7 +15,7 @@ export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
 
     const handleBuyRobux = () => {    
         if (minPointsReached == true) {
-            const newTotalPoints = totalPoints-600;
+            const newTotalPoints = totalPoints-500;
             reducePoints(newTotalPoints);
         }
         else {
