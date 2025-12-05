@@ -17,6 +17,7 @@ export default function Dashboard ({ sessionPoints,totalPoints,reducePoints }) {
         if (minPointsReached == true) {
             const newTotalPoints = totalPoints-500;
             reducePoints(newTotalPoints);
+            setMinPointsReached(false);
         }
         else {
             setErrMsg("Es sind noch nicht genug Punkte vorhanden.");
