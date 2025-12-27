@@ -1,4 +1,4 @@
-import { generateNumber, getSum } from "./helperFunctions";
+import { generateNumber, getSum, getThousand } from "./helperFunctions";
 
 export default function userSelection(operation,setNum1,setNum2){
     switch (operation) {
@@ -47,6 +47,10 @@ export default function userSelection(operation,setNum1,setNum2){
             setNum1(num3);
             setNum2(num2);          
             break;
+        }
+        case "numberLine": {
+            let num1=getThousand(generateNumber(100000));
+            let num2=getThousand(generateNumber(100000));
         }
         default: console.log("Fehler in der Rechnenoperation!");break;
     }

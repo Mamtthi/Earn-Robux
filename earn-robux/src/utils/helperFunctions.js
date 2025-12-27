@@ -29,4 +29,8 @@ export function getQuotient (num1,num2) {
     return num1/num2;
 }
 
+export function getThousand(num) {
+    return  Math.round(num / 1000) * 1000;
+}
+
 export const counterArray =[];

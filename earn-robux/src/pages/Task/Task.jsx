@@ -5,6 +5,7 @@ import TaskMathAddition from "./TaskMathAddition/TaskMathAddition";
 import TaskMathSubtraction from "./TaskMathSubtraction/TaskMathSubtraction";
 import TaskMathMultiplication from "./TaskMathMultiplication/TaskMathMultiplication";
 import TaskMathDivision from "./TaskMathDivision/TaskMathDivision";
+import TaskMathNumberLine from "./TaskMathNumberLine";
 
 
 export default function Task ({addPoints,sessionPoints}) {
@@ -16,6 +17,7 @@ export default function Task ({addPoints,sessionPoints}) {
                 <Route path="taskmathsubtraction" element={ <TaskMathSubtraction addPoints={addPoints} sessionPoints={sessionPoints}/> } />
                 <Route path="taskmathmultiplication" element={ <TaskMathMultiplication addPoints={addPoints} sessionPoints={sessionPoints}/> } />
                 <Route path="taskmathdivision" element={ <TaskMathDivision addPoints={addPoints} sessionPoints={sessionPoints}/> } />
+                <Route path="taskmathnumberline" element={ <TaskMathNumberLine addPoints={addPoints} sessionPoints={sessionPoints}/>} />
             </Routes>
             <Outlet />
         </>
